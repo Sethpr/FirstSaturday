@@ -1,11 +1,11 @@
-package src.test.java;
+//package src.test.java;
 
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import src.main.java.WriteIFs;
+//import src.main.java.WriteIFs;
 
 /**
  * The test class src.test.java.WriteIFsTest.
