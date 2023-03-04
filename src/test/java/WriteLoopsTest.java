@@ -1,4 +1,4 @@
-//package test;
+package src.test.java;
 
 import static org.junit.Assert.*;
 import org.junit.After;
@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 //import main.java.WriteIFs;
 
-//import src.main.java.WriteLoops;
+import src.main.java.WriteLoops;
 
 /**
  * The test class src.test.java.WriteLoopsTest.
@@ -60,7 +60,7 @@ public class WriteLoopsTest
     public void TestStartAtTwentyOne()
     {
         WriteLoops writeLoo1 = new WriteLoops();
-        assertEquals(11, writeLoo1.startAtTwentyOne());
+        assertEquals(10, writeLoo1.startAtTwentyOne()); //problem said expected 10, changed test to match
     }
 
     @Test

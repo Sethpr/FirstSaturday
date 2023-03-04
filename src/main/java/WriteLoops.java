@@ -1,4 +1,4 @@
-//package src.main.java;
+package src.main.java;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -57,7 +57,7 @@ public class WriteLoops {
         int w = 0;
 
         // Write a FOR loop that counts down from 100 to 0.
-        for(int i = 100; i>=0; i--) {
+        for(int i = 100; i>0; i--) {
             // calling
             w = w + 1;
             // each time through the loop
@@ -154,9 +154,10 @@ public class WriteLoops {
         // you need to use a .equals for two Strings.
             while(!gpsCurrentLocation().equals("Home")){
                 driveSomeMore();
+                w = w + 1;
             }
             // calling
-            w = w + 1;
+
             // each time through the inner loop
 
         System.out.println("Honey, I'm Home!");
@@ -169,7 +170,7 @@ public class WriteLoops {
     // is less than “highestScore” and if it is, adds “currentScore” to
     // "runningScore"
     // and then sets “currentScore” to “gameNextScore()”
-    public int checkGameScore() {
+    public boolean checkGameScore() {
         int w = 0;
         int highestScore = 236;
         int currentScore = gameNextScore();
@@ -182,7 +183,7 @@ public class WriteLoops {
                 w = w + 1;
                 // each time through the inner loop
             }
-        return w; // >= 3;
+        return w >= 3;
     }
 
     // Rewrite the previous WHILE loop as a DO..WHILE loop.
