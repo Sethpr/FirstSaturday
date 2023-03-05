@@ -7,7 +7,7 @@ package src.main.java;
  * @version 3/3/23
  */
 public class WriteIFs
-{
+{ //this if one is a lot more boring than the loop one
  
     public void playerDied(boolean player1) {
         // Write an IF statement that checks “player1.isAlive()” 

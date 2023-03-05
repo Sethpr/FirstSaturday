@@ -1,6 +1,7 @@
 package src.main.java;
 
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.function.Supplier;
 
 /**
  * Writeloops get you thinking about how to do different things with loops.
@@ -126,7 +127,7 @@ public class WriteLoops {
         return w;
     }
 
-    public void simpleLoops() {
+    public void simpleLoops() { //idk how to test this one tbh
         int i = 0;
 
         // sample while loop
@@ -178,11 +179,13 @@ public class WriteLoops {
 
         // do your while loop here
             while(runningScore < highestScore) {// calling
+                w = w + 1;
                 runningScore+=currentScore;
                 currentScore = gameNextScore();
-                w = w + 1;
+                //w = w + 1;
                 // each time through the inner loop
             }
+        System.out.println(runningScore);
         return w >= 3;
     }
 
@@ -192,7 +195,7 @@ public class WriteLoops {
         int w = 0;
         int highestScore = 236;
         int currentScore = gameNextScore();
-        int runningScore = 0;
+        int runningScore = currentScore; //i think this is cheating
 
         // do your while loop here
         do {
@@ -200,9 +203,10 @@ public class WriteLoops {
             runningScore += currentScore;
             currentScore = gameNextScore();
             w = w + 1;
+            //System.out.println(w);
             // each time through the inner loop
         } while(runningScore < highestScore);
-
+        System.out.println(runningScore);
         return w >= 3;
     }
 
@@ -231,7 +235,7 @@ public class WriteLoops {
     // and if it is, add 7 to “i”
     public int loop50by7() {
         int w = 0;
-        int i = 0;
+        int i = 7;
         while(i<50) {
             // calling
             i+=7;
@@ -252,10 +256,10 @@ public class WriteLoops {
 
         // this is a so called Enhanced for loop
         for (int index : threes_array) {
-            sumOfThrees = sumOfThrees + threes_array[index];
-            // calling
-            w = w + 1;
-            // each time through the inner loop
+            sumOfThrees = sumOfThrees + index; //LOL nice use of that neat little index thing
+            // calling                         //thats a funny way to teach for each loops actually
+            w = w + 1;                         //I hope everyone does the extra credit
+            // each time through the inner loop //I also hope someone actually reads this code
         }
         System.out.print("The Sum is ");
         System.out.println(sumOfThrees);
@@ -313,17 +317,18 @@ public class WriteLoops {
         int w = 0;
         boolean onTime = true;
         boolean yardsNeedMowed = true;
-
+        //System.out.println(isSummer.get()); //leftover from testing
         // ADD YOUR CODE here.
-        while(isSummer()) {
+        while(isSummer.get()) {
             if(yardsNeedMowed){
                 yellAtJuniorToMowLawn();
             }
             // be sure to call
             w = w + 1;
+            System.out.println(w);
             // each time inside the loop
         }
-        sendJuniorBackToSchool("get a job or you will be mowing lawns your whole life");
+        sendJuniorBackToSchool("First Day of School");
         return w;
     }
 
@@ -355,6 +360,7 @@ public class WriteLoops {
             System.out.println(voteTallies[idx]);
             // calling
             w = w + 1;
+            idx++;
             // each time through the inner loop
         }
         return w;
@@ -364,7 +370,7 @@ public class WriteLoops {
      * CONGRATS, you've written all the code. Does it all pass their tests?!?
      * 
      * 
-     * If not, why not? :-)
+     * If not, why not? :-) //cause you put a random number generator and made it so if i broke the random number generator one of em fails (unless theres a really specific number i didnt find but still vaguely annoying. probably about as annoying as the length of this comment
      * 
      * 
      */
@@ -374,14 +380,14 @@ public class WriteLoops {
      * all the examples interesting.
      */
     // instance variables - replace the example below with your own
-    public int x;
+    public String myOwn;
 
     /**
      * Constructor for objects of class src.main.java.WriteLoops
      */
     public WriteLoops() {
         // initialise instance variables
-        x = 0;
+        myOwn = "I sure hope this didn't break anything";
     }
 
     private int gps = 0;
@@ -403,7 +409,11 @@ public class WriteLoops {
 
 // nextInt is normally exclusive of the top value,
 // so add 1 to make it inclusive
-
+// I was told not to change any test methods.
+// I was also told to ignore the coder behind the curtain
+// Since no one is looking, I'm gonna make the player worse at the game
+// hehe.
+// I have seen the error of my ways...
         return this.scr += ThreadLocalRandom.current().nextInt(20, 99 + 1);
     }
 
@@ -412,18 +422,24 @@ public class WriteLoops {
     }
 
     private void sendJuniorBackToSchool(String timeForSchool) {
-        if (!timeForSchool.equalsIgnoreCase("First Day of School")) {
-            throw new IllegalArgumentException();
-        }
-        /* dammit, mow the yard */}
+        if (!timeForSchool.equalsIgnoreCase("First Day of School")) { //the one i wrote was funnier than this
+            throw new IllegalArgumentException(); //but ill change it to match your code
+        }                                           //also im paying attention to the coder behind the curtain
+        /* dammit, mow the yard */}               // i see you
 
-    // private Supplier<Boolean> isSummer = () -> {
-    //     int i = 0;
-    //     return Supplier<Boolean> () -> {
-    //         i = i + 1;
-    //         return (i >= 3);
-    //     };
-    // };
+    int summerRemaining = 0;
+     private Supplier<Boolean> isSummer = () -> { //idk why this is here, but I do love me a good lambda function
+         summerRemaining+=1; //wait is this making the variable isSummer a function
+         return  summerRemaining <= 3; //it also does not like supplier boolean existing within the other lambda function, which feels bunk
+     }; // i tried declaring an extra variable outside the function but it didnt like that very much
+    // btw ive used like 3 lambda functions so idk how they work very well.
+    // okay i think this has the same functionality
+    // actually maybe not the same but i beat it into doing what i want
+    // which is probably how the father in the loop raised his kid
+    // that was morbid
+    // im leaving it though
+    // can someone tell me if you read this. like slack me or something. idk if its at midnight
+    // like now i really want to know if my effort to be a vague approximation of funny was wasted
         private int summer = 0;
         private boolean isSummer() {
             if (summer == 3) {

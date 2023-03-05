@@ -128,4 +128,53 @@ public class WriteLoopsTest
         WriteLoops writeLoo1 = new WriteLoops();
         assertEquals(3, writeLoo1.checkServerStatus());
     }
+
+    @Test
+    public void TestFoo(){ // im getting the extra credit to make up for the fact that im not fixing the game ones
+        WriteLoops writeLoo1 = new WriteLoops(); //and also a neat little package error that i think im supposed to fix
+        assertEquals(7, writeLoo1.foo());//with maven but uh i kinda tried to fix it before i got maven working
+    }
+
+    @Test
+    public void TestRewriteFooAsFor(){
+        WriteLoops writeLoo1 = new WriteLoops();
+        assertEquals(7, writeLoo1.rewriteFooAsFor());
+    }
+
+    @Test
+    public void TestRewriteFooAsWhile(){
+        WriteLoops writeLoo1 = new WriteLoops();
+        assertEquals(7, writeLoo1.rewriteFooAsWhile());
+    }
+
+    @Test
+    public void TestManageYardAndJunior(){
+        WriteLoops writeLoo1 = new WriteLoops();
+        assertEquals(3, writeLoo1.manageYardAndJunior());
+    }
+
+    @Test
+    public void TestTallyVote1(){
+        WriteLoops writeLoo1 = new WriteLoops();
+        assertEquals(13, writeLoo1.tallyVote1());
+    }
+
+    @Test
+    public void TestTallyVote2(){ // I wrote a good number of comments in the writeloops file. you should read them
+        WriteLoops writeLoo1 = new WriteLoops(); //please that was minutes of my life
+        assertEquals(13, writeLoo1.tallyVote2()); //MINUTES
+    }
+
+    @Test
+    public void TestLoop50by7(){
+        WriteLoops writeLoo1 = new WriteLoops();
+        assertEquals(7, writeLoo1.loop50by7());
+    }
+
+    /*@Test
+    public void TestSimpleLoops(){
+        WriteLoops writeLoo1 = new WriteLoops();
+        assertEquals(void, writeLoo1.simpleLoops());
+    }*/ //I was curious if this worked. as you may have guessed by the fact that its commented out, it did not
 }
+
